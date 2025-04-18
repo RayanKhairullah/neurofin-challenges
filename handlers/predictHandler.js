@@ -1,9 +1,7 @@
 const Boom = require('@hapi/boom');
 const client = require('../services/inferenceClient');
 const { getMainSentiment } = require('../utils');
-
-// Simulasi database in-memory untuk artikel
-const articlesDb = [];
+const { articlesDb } = require('../services/data');
 
 const predict = async (request, h) => {
   try {
@@ -25,7 +23,7 @@ const predict = async (request, h) => {
       title,
       content,
       timestamp: articleTimestamp,
-      sentiment, // Output berupa array of objects [{ label, score }, ...]
+      sentiment, 
     };
 
     articlesDb.push(articleRecord);

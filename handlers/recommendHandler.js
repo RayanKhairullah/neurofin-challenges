@@ -1,5 +1,5 @@
 const Boom = require('@hapi/boom');
-const { articlesDb } = require('../services/inferenceClient');
+const { articlesDb } = require('../services/data');
 const { getMainSentiment } = require('../utils');
 
 module.exports = {
